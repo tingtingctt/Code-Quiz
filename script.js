@@ -6,11 +6,17 @@ var secondsLeft = 75;
 var quizArray = [showQuiz1, showQuiz2, showQuiz3, showQuiz4, showQuiz5, showResult];
 var scores = [];
 
+
+// ------------------- Show Instruction/Start Page ---------------------------------
+
 showStart();
 showTime ();
-initScores()
 
 // -------------- Retrieve Highscores from local storage ------------------------
+
+if (localStorage.getItem("scores") !== ""){
+  initScores();
+};
 
 function initScores() {
   var storedScores = JSON.parse(localStorage.getItem("scores"));
@@ -61,7 +67,6 @@ function showStart() {
 
   var startBtn = document.createElement("button");
   startBtn.textContent = "Start Quiz";
-  startBtn.setAttribute("style", "margin-left: 150px");
   startEl.appendChild(startBtn);
 }
 
@@ -72,26 +77,21 @@ function showQuiz1() {
   quizEl.setAttribute ("id", "1");
 
   var quizH2 = document.createElement("h2");
-  var lineBreak = document.createElement("br");
   quizH2.textContent = "Commonly used data types DO NOT include:";
   quizEl.appendChild(quizH2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn1 = document.createElement("button");
   quizBtn1.textContent = "1. strings";
   quizEl.appendChild(quizBtn1);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn2 = document.createElement("button");
   quizBtn2.textContent = "2. booleans";
   quizEl.appendChild(quizBtn2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn3 = document.createElement("button");
   quizBtn3.textContent = "3. alerts";
   quizBtn3.setAttribute ("class", "correct");
   quizEl.appendChild(quizBtn3);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn4 = document.createElement("button");
   quizBtn4.textContent = "4. numbers";
@@ -104,26 +104,21 @@ function showQuiz2() {
   quizEl.setAttribute ("id", "2");
 
   var quizH2 = document.createElement("h2");
-  var lineBreak = document.createElement("br");
   quizH2.textContent = "The condition in an if/else statement is enclosed within:";
   quizEl.appendChild(quizH2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn1 = document.createElement("button");
   quizBtn1.textContent = "1. quotes";
   quizEl.appendChild(quizBtn1);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn2 = document.createElement("button");
   quizBtn2.textContent = "2. curly brackets";
   quizEl.appendChild(quizBtn2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn3 = document.createElement("button");
   quizBtn3.textContent = "3. parenthesis";
   quizBtn3.setAttribute ("class", "correct");
   quizEl.appendChild(quizBtn3);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn4 = document.createElement("button");
   quizBtn4.textContent = "4. square brackets";
@@ -136,30 +131,24 @@ function showQuiz3() {
   quizEl.setAttribute ("id", "3");
 
   var quizH2 = document.createElement("h2");
-  var lineBreak = document.createElement("br");
   quizH2.textContent = "Arrays in JavaScript can be used to store:";
   quizEl.appendChild(quizH2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn1 = document.createElement("button");
   quizBtn1.textContent = "1. numbers and strings";
   quizEl.appendChild(quizBtn1);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn2 = document.createElement("button");
   quizBtn2.textContent = "2. other arrays";
   quizEl.appendChild(quizBtn2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn3 = document.createElement("button");
   quizBtn3.textContent = "3. booleans";
   quizEl.appendChild(quizBtn3);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn4 = document.createElement("button");
   quizBtn4.textContent = "4. all of the above";
   quizBtn4.setAttribute ("class", "correct");
-  quizEl.appendChild(quizBtn4);
 }
 
 // quizArray[3] - Quiz 4
@@ -168,26 +157,21 @@ function showQuiz4() {
   quizEl.setAttribute ("id", "4");
 
   var quizH2 = document.createElement("h2");
-  var lineBreak = document.createElement("br");
   quizH2.textContent = "String values must be enclosed within";
   quizEl.appendChild(quizH2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn1 = document.createElement("button");
   quizBtn1.textContent = "1. commas";
   quizEl.appendChild(quizBtn1);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn2 = document.createElement("button");
   quizBtn2.textContent = "2. curly brackets";
   quizEl.appendChild(quizBtn2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn3 = document.createElement("button");
   quizBtn3.textContent = "3. quotes";
   quizEl.appendChild(quizBtn3);
   quizBtn3.setAttribute ("class", "correct");
-  quizEl.appendChild(lineBreak);
 
   var quizBtn4 = document.createElement("button");
   quizBtn4.textContent = "4. parenthesis";
@@ -200,25 +184,20 @@ function showQuiz5() {
   quizEl.setAttribute ("id", "5");
 
   var quizH2 = document.createElement("h2");
-  var lineBreak = document.createElement("br");
   quizH2.textContent = "A very useful tool used during developement and debugging for printing content to the debugger is:";
   quizEl.appendChild(quizH2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn1 = document.createElement("button");
   quizBtn1.textContent = "1. JavaScript";
   quizEl.appendChild(quizBtn1);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn2 = document.createElement("button");
   quizBtn2.textContent = "2. terminal/bash";
   quizEl.appendChild(quizBtn2);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn3 = document.createElement("button");
   quizBtn3.textContent = "3. for loops";
   quizEl.appendChild(quizBtn3);
-  quizEl.appendChild(lineBreak);
 
   var quizBtn4 = document.createElement("button");
   quizBtn4.textContent = "4. console log";
@@ -241,7 +220,6 @@ function showResult() {
   var resultP = document.createElement("p");
   resultP.textContent = "Your final score is " + secondsLeft;
   quizEl.appendChild(resultP);
-  quizEl.appendChild(lineBreak);
 
   var form = document.createElement("form");
   quizEl.appendChild(form);
@@ -256,17 +234,6 @@ function showResult() {
   submitBtn.setAttribute("class", "submit")
   form.appendChild(submitBtn);
 }
-
-// ------------------------
-
-function showScores() {
-  scoresEl.setAttribute("display", "block");
-}
-
-function hideScores() {
-  scoresEl.setAttribute("display", "none");
-}
-
 
 
 // ----------------------- Event Listeners ----------------------------------

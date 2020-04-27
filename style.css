@@ -1,10 +1,34 @@
+.container {
+  margin: 0 100px;
+}
+
+.containerCenter {
+  margin: 100px auto;
+  text-align: center;
+}
+
 #time {
-    position:fixed;
-    top: 5px;
-    right: 10px;
+  position:fixed;
+  top: 5px;
+  right: 10px;
   }
 
+#scores {
+  position:fixed;
+  top: 5px;
+  left: 10px;
+}
 
 #start {
-    margin: 40px auto;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.quiz {
+  margin: 60px auto;
+}
+
+#scoreList {
+  margin: 60px auto;
+  text-align: center;
 }
