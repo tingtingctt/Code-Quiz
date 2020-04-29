@@ -149,6 +149,7 @@ function showQuiz3() {
   var quizBtn4 = document.createElement("button");
   quizBtn4.textContent = "4. all of the above";
   quizBtn4.setAttribute ("class", "correct");
+  quizEl.appendChild(quizBtn4);
 }
 
 // quizArray[3] - Quiz 4
@@ -264,6 +265,7 @@ quizEl.addEventListener("click", function(event) {
     scores.push(input.value + "-" + secondsLeft);
     localStorage.setItem("scores", JSON.stringify(scores));
     console.log(scores);
+    window.location.href = "./scores.html";
   }
 
   else if (answer.matches("button") && answer.getAttribute("class") !== "submit" && answer.getAttribute("class") !== "correct") {
