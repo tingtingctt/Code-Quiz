@@ -1,4 +1,6 @@
 # GitHomework-04-CodeQuiz
+Deployed website: https://tingtingctt.github.io/Code-Quiz/.
+
 The quiz uses "container-fluid" to adapt to any screen sizes.
 
 The "scores" page has its separate html with its own scores.js.
